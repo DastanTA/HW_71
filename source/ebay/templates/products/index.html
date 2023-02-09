@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    All products
+{% endblock %}
+
+
+{% block menu %}
+    {% if perms.ebay.add_product %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'ebay:add_product' %}">Добавить продукт</a></li>
+    {% endif %}
+{% endblock %}
+
+
+{% block search %}
+    {% include 'partial/simple_search.html' %}
+{% endblock %}
+
+
+{% block content %}
+    <div><br><br><br><h2>Все товары [{{ products.count }}]</h2><br></div>
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+
+<div class="row row-cols-1">
+    {% for product in products %}
+      <div class="col mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">Цена: {{ product.price }}</p>
+            <p class="card-text">Категория: {{ product.get_category_display }}</p><br>
+            <a href="{{ product.get_absolute_url }}" class="btn btn-info">Подробнее</a>
+            {% if perms.ebay.delete_product %}
+                <a href="{% url 'ebay:delete_product' product.id %}" class="btn btn-secondary">Удалить</a>
+            {% endif %}
+            {% if perms.ebay.change_product %}
+                <a href="{% url 'ebay:update_product' product.id %}" class="btn btn-secondary">Изменить</a>
+            {% endif %}
+            {% include 'basket/add_to_basket.html' %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+</div><br>
+
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+
+{% endblock %}

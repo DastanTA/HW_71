@@ -1,0 +1,266 @@
+[
+{
+    "model": "ebay.product",
+    "pk": 1,
+    "fields": {
+        "name": "Bread",
+        "description": "Baton. 0.4 kg",
+        "category": "food",
+        "remainder": 0,
+        "price": "45.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 2,
+    "fields": {
+        "name": "robot",
+        "description": "Toy robot. Autobot - Transformer",
+        "category": "toys",
+        "remainder": 3,
+        "price": "150.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 3,
+    "fields": {
+        "name": "Screw-driver",
+        "description": "Инструмент. Отвертка",
+        "category": "other",
+        "remainder": 5,
+        "price": "75.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 4,
+    "fields": {
+        "name": "Notebook",
+        "description": "Ordinary notebook. A4 size",
+        "category": "stationary",
+        "remainder": 95,
+        "price": "50.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 5,
+    "fields": {
+        "name": "When Mountains Fall",
+        "description": "Chyngyz Aitmatov. The last novel of the legendary writer.",
+        "category": "books",
+        "remainder": 20,
+        "price": "800.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 6,
+    "fields": {
+        "name": "Milk",
+        "description": "Milk. Dairy. 2.5%. expiry date: 20.12.2022",
+        "category": "food",
+        "remainder": 39,
+        "price": "70.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 7,
+    "fields": {
+        "name": "Pen",
+        "description": "Ordinary, most cheap pen",
+        "category": "stationary",
+        "remainder": 93,
+        "price": "15.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 8,
+    "fields": {
+        "name": "piggy bank",
+        "description": "Kopilka. Dollar print. large size",
+        "category": "other",
+        "remainder": 0,
+        "price": "250.00"
+    }
+},
+{
+    "model": "ebay.product",
+    "pk": 10,
+    "fields": {
+        "name": "тест 1",
+        "description": "Test 1",
+        "category": "other",
+        "remainder": 1,
+        "price": "0.04"
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 1,
+    "fields": {
+        "product": 5,
+        "order": 1,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 2,
+    "fields": {
+        "product": 6,
+        "order": 1,
+        "quantity": 3
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 5,
+    "fields": {
+        "product": 5,
+        "order": 3,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 6,
+    "fields": {
+        "product": 6,
+        "order": 3,
+        "quantity": 4
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 7,
+    "fields": {
+        "product": 4,
+        "order": 3,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 8,
+    "fields": {
+        "product": 1,
+        "order": 4,
+        "quantity": 5
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 9,
+    "fields": {
+        "product": 6,
+        "order": 4,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 10,
+    "fields": {
+        "product": 4,
+        "order": 5,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 11,
+    "fields": {
+        "product": 7,
+        "order": 5,
+        "quantity": 2
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 12,
+    "fields": {
+        "product": 4,
+        "order": 6,
+        "quantity": 3
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 13,
+    "fields": {
+        "product": 7,
+        "order": 6,
+        "quantity": 5
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 14,
+    "fields": {
+        "product": 4,
+        "order": 7,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.orderproduct",
+    "pk": 15,
+    "fields": {
+        "product": 2,
+        "order": 7,
+        "quantity": 1
+    }
+},
+{
+    "model": "ebay.order",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "created_at": "2022-12-13T12:44:33.630Z"
+    }
+},
+{
+    "model": "ebay.order",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "created_at": "2022-12-13T12:47:49.465Z"
+    }
+},
+{
+    "model": "ebay.order",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "created_at": "2022-12-15T16:37:35.039Z"
+    }
+},
+{
+    "model": "ebay.order",
+    "pk": 5,
+    "fields": {
+        "user": 3,
+        "created_at": "2023-01-10T09:34:13.163Z"
+    }
+},
+{
+    "model": "ebay.order",
+    "pk": 6,
+    "fields": {
+        "user": 3,
+        "created_at": "2023-01-10T11:26:32.454Z"
+    }
+},
+{
+    "model": "ebay.order",
+    "pk": 7,
+    "fields": {
+        "user": null,
+        "created_at": "2023-01-10T11:57:27.522Z"
+    }
+}
+]

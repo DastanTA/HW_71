@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Basket
+{% endblock %}
+
+
+{% block content %}
+    <div><br><br><br><h2>Товары в корзине [{{ in_basket.count }} нaименований]</h2><br></div>
+
+    <table  class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Товар</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">количество (шт.)</th>
+          <th scope="col">цена (сом)</th>
+          <th scope="col">сумма (сом)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for element in in_basket %}
+            <tr>
+              <td>{{ element.product.name }}</td>
+              <td><a href="{% url 'ebay:delete_one_in_basket' element.pk %}" class="btn btn-secondary btn-sm">-1</a></td>
+              <td><a href="{% url 'ebay:delete_in_basket' element.pk %}" class="btn btn-secondary btn-sm">Удалить</a></td>
+              <td>{{ element.quantity }}</td>
+              <td>{{ element.product.price }}</td>
+              <td>{{ element.get_product_total}}</td>
+            </tr>
+        {% empty %}
+            <p>В корзине пока ничего нет</p>
+        {% endfor %}
+        <tr class="table-dark">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Итого:</td>
+            <td>{{ total }} сом</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <br><br>
+    <form action="{% url 'ebay:add_order' %}" method="POST" class="mt-5">
+        {% include 'partial/form_template.html' with button_text="оформить заказ" %}
+    </form>
+
+{% endblock %}
