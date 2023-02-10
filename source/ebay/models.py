@@ -58,7 +58,7 @@ class OrderProduct(models.Model):
 
 
 class Order(models.Model):
-    product = models.ManyToManyField('ebay.Product', related_name='order', through='ebay.OrderProduct',
+    products = models.ManyToManyField('ebay.Product', related_name='order', through='ebay.OrderProduct',
                                      through_fields=('order', 'product'), blank=True)
     user = models.ForeignKey(get_user_model(), related_name='orders', on_delete=models.CASCADE,
                              verbose_name='Пользователь', null=True, blank=True)

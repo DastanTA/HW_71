@@ -3,7 +3,7 @@ from ebay.models import Product, Basket, Order, OrderProduct
 
 
 class OrderProductInLine(admin.TabularInline):
-    model = Order.product.through
+    model = Order.products.through
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -27,7 +27,7 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = [
         OrderProductInLine,
     ]
-    exclude = ['product']
+    exclude = ['products']
 
 
 admin.site.register(Product, ProductAdmin)
