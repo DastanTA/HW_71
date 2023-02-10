@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from ebay.models import Product, Order, OrderProduct
+from ebay.models import Product, Order, OrderProduct, Basket
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -30,3 +30,11 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = ['id', 'order_product', 'user', 'created_at']
         read_only_fields = ['id', 'created_at']
+
+
+class BasketSerializer(serializers.ModelSerializer):
+    product = ProductSerializer(read_only=True)
+
+    class Meta:
+        model = Basket
+        fields = ['id', 'product', 'quantity']
