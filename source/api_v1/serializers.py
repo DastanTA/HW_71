@@ -25,12 +25,7 @@ class OrderProductSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     order_product = OrderProductSerializer(many=True, read_only=True)
-    
-    # def to_representation(self, instance):
-    #     data = super().to_representation(instance)
-    #     data['product'] = ProductSerializer(instance.product.all(), many=True).data
-    #     return data
-
+   
     class Meta:
         model = Order
         fields = ['id', 'order_product', 'user', 'created_at']
